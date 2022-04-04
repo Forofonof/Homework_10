@@ -5,29 +5,27 @@
     static void Main(string[] args)
     {
         Random random = new Random();
-        int randomNumber;
+        int number;
+        int numberDivisibleA = 3;
+        int numberDivisibleB = 5;
+        int sum;
+        int sumA;
+        int sumB;
         int numberMinimum = 5;
         int numberMaximum = 100;
-        int divisibleNumberThree = 3;
-        int divisibleNumberFive = 5;
-        int numberThree;
-        int numberFive;
-        int divisibleNumberAmount;
 
-        for (numberMinimum = 0; numberMinimum <= numberMaximum;)
+        for (int i = 0; i < numberMinimum;)
         {
-            randomNumber = random.Next(numberMinimum, numberMaximum);
-            Console.WriteLine($"Случайное число: {randomNumber}.");
+            number = random.Next(numberMinimum, numberMaximum);
 
-            if ((randomNumber % divisibleNumberThree == 0) && (randomNumber % divisibleNumberFive == 0))
+            if ((number % numberDivisibleA == 0) || (number % numberDivisibleB == 0))
             {
-                numberThree = +randomNumber / divisibleNumberThree;
-                numberFive = +randomNumber / divisibleNumberFive;
-                divisibleNumberAmount = +numberThree + numberFive;
-
-                Console.WriteLine($"Сумма чисел кратное 3 и 5: {divisibleNumberAmount}.");
+                sumA = number / 3;
+                sumB = number / 5;
+                sum = sumA + sumB;
+                Console.WriteLine($"случайное число: {number}. Сумма кратных чисел 3 или 5: {sum}. ");
+                Console.ReadKey();
             }
-            Console.ReadKey();
         }
     }
 }
