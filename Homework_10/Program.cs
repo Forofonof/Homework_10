@@ -8,24 +8,24 @@
         int number;
         int numberDivisibleA = 3;
         int numberDivisibleB = 5;
-        int sum;
+        int sum = 0;
         int sumA;
         int sumB;
-        int numberMinimum = 5;
+        int numberMinimum = 0;
         int numberMaximum = 100;
+        int j = 0;
 
-        for (int i = 0; i < numberMinimum;)
+        number = random.Next(numberMinimum, numberMaximum);
+
+        for (; numberMinimum <= number; numberMinimum++)
         {
-            number = random.Next(numberMinimum, numberMaximum);
-
-            if ((number % numberDivisibleA == 0) || (number % numberDivisibleB == 0))
+            sumA = numberMinimum / numberDivisibleA;
+            sumB = numberMinimum / numberDivisibleB;
+            if ((sumA / numberDivisibleA == j) || (sumB / numberDivisibleB == j))
             {
-                sumA = number / 3;
-                sumB = number / 5;
                 sum = sumA + sumB;
-                Console.WriteLine($"случайное число: {number}. Сумма кратных чисел 3 или 5: {sum}. ");
-                Console.ReadKey();
             }
         }
+        Console.WriteLine($"случайное число: {number}. Сумма кратных чисел 3 или 5: {sum}");
     }
 }
